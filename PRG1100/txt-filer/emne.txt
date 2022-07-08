@@ -1,0 +1,18 @@
+PRG1000
+Grunnleggende programmering
+WEB1000
+Web og HCI
+INF1000
+Info.syst
+MAT1000
+Grunnleggende matte
+FYS1000
+Fysikk
+LOV1000
+Lovdata
+JUS1000
+Jus
+ENG1000
+Engelsk
+FRA1000
+Fransk

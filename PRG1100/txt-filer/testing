@@ -1,0 +1,46 @@
+def leggTil():
+    nyStudent='j'
+    print('Du har valgt 1, registrering av studentnummer.')
+    print()
+    while nyStudent=='j' or nyStudent=='J':
+        studentEksisterer=False
+        while studentEksisterer==False:
+
+            studentnr=input('Skriv inn studentnummer eller n/N for å gå tilbake til hovedmeny:')
+
+            studentfil=open('student.txt','r')
+            soket=studentfil.readline()
+            if studentnr=='n' or studentnr=='N':
+                nyStudent=0
+                studentEksisterer=True
+                soket=''
+                print()
+                print('Tilbake til hovedmeny')
+                print()
+
+                while soket!='':
+                    soket=soket.rstrip('\n')
+
+                    if soket==studentnr:
+                        print('Student nummer',studentnr,'finnes allerede i registeret og lagres ikke.')
+                        studentEksisterer=True
+                    soket=studentfil.readline()
+
+                studentfil.close()
+                if not studentEksisterer:
+                    studentfil=open('student.txt','a')
+                    print('Registrerer', studentnr)
+                    fornavn=input('Skriv inn fornavn på student: ')
+                    etternavn=input('Skriv inn etternavn på student: ')
+                    studium=input('Skriv inn studim på student: ')
+
+                    studentfil.write(studentnr+'\n')
+                    studentfil.write(fornavn+'\n')
+                    studentfil.write(etternavn+'\n')
+                    studentfil.write(studium+'\n')
+                    print('Studenten er nå lagret!')
+                    studentEksisterer=True
+                    #Studentopplysningene er lagt til i student.txt og spør om du vil legge til fler
+                    studentfil.close()
+                    print('j/J for å legge til ny student eller n/N for å gå til hovedmeny')
+                    nyStudent=input('Vil du legge til flere studenter? ')
