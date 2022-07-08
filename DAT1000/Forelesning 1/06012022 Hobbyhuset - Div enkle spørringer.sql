@@ -1,0 +1,45 @@
+USE hobbyhusetkap2;
+
+SELECT *
+FROM Vare;
+
+SELECT *
+FROM Vare
+ORDER BY VNr;
+
+SELECT VNr, Betegnelse
+FROM Vare;
+
+SELECT Kategori
+FROM Vare;
+
+SELECT DISTINCT Kategori
+FROM Vare;
+
+SELECT *
+FROM Vare
+WHERE Kategori='Fiske';
+
+SELECT *
+FROM Vare
+WHERE UPPER(Kategori)='FISKE';
+
+SELECT *
+FROM Vare
+WHERE (pris<100);
+
+SELECT *
+FROM Vare
+WHERE (pris>=100);
+
+SELECT *
+FROM Vare
+WHERE (pris BETWEEN 100 AND 200);
+
+SELECT *
+FROM Vare
+WHERE Hylle IS NULL;
+
+SELECT *
+FROM Vare
+WHERE Hylle IS NOT NULL;
